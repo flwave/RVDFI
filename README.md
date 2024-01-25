@@ -8,7 +8,7 @@ Lang Feng, Jiayi Huang, Luyi Li, Haochen Zhang, Zhongfeng Wang, [RVDFI: A RISC-V
 
 Acknowledgment: We thank Xun Jiang for his contribution to setting up the basic RISC-V platform.
 
-Contact: fenglang3@mail.sysu.edu.cn; hjy@hkust-gz.edu.cn
+Contact: Lang Feng (fenglang3@mail.sysu.edu.cn) and Jiayi Huang (hjy@hkust-gz.edu.cn).
 
 ## 2. Repository Contents
 
