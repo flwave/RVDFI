@@ -1,0 +1,4 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/lf/hams/freedom/rocket-chip/chisel3/src/main/resources/chisel3,/home/lf/hams/freedom/rocket-chip/chisel3/target/scala-2.12/classes/chisel3)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/lf/hams/freedom/rocket-chip/chisel3/src/main/resources/chisel3/Makefile,/home/lf/hams/freedom/rocket-chip/chisel3/target/scala-2.12/classes/chisel3/Makefile)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/lf/hams/freedom/rocket-chip/chisel3/src/main/resources/chisel3/top.cpp,/home/lf/hams/freedom/rocket-chip/chisel3/target/scala-2.12/classes/chisel3/top.cpp)[0m
