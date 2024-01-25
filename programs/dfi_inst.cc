@@ -217,6 +217,7 @@ void init_soft_dfi(){
 	#else
 	asm(".word 0xc000000b");
 	#endif
+	printf("%x\n",(unsigned long)__builtin_frame_address(0));
 	std::cout<<std::hex<<"max call count "<<((unsigned long*)dfi_reg_s)[0]<<std::endl;
 	std::cout<<"init dfi end"<<std::endl;
 }

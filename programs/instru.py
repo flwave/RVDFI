@@ -4067,7 +4067,7 @@ elif (exp_mode=='noinstr' and mode==2) or exp_mode=='roccinstr' or exp_mode=='so
 				idinst[i_i]['del']=1
 			i_i+=1
 	
-	if or exp_mode=='soft' or exp_mode=='roccinstr' or exp_mode=='ori':
+	if exp_mode=='soft' or exp_mode=='roccinstr' or exp_mode=='ori':
 		inst_ll(idinst,sys.argv[1]+'.ll',sys.argv[1]+'.ll')
 		print "Instrument bitcode complete"
 	

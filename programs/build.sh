@@ -26,9 +26,9 @@ export LLVMPATH=xxx/llvm-7.0.0/build-riscv-release
 export LLVMPATH2=xxx/llvm-11.0.0/build-riscv-release
 export SVFPATH=xxx/SVF/Release-build
 export SPECPATH=xxx/speccpu/benchspec/CPU2006
-export ROOTPATH=xxx/rvdfi
-export PROGPATH=xxx/rvdfi/programs
-export WORKPATH=xxx/rvdfi/run_${2}
+export ROOTPATH=xxx/RVDFI
+export PROGPATH=xxx/RVDFI/programs
+export WORKPATH=xxx/RVDFI/run_${2}
 
 
 mkdir ${WORKPATH}

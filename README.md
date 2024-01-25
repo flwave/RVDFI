@@ -15,7 +15,7 @@ Contact: Lang Feng (fenglang3@mail.sysu.edu.cn) and Jiayi Huang (hjy@hkust-gz.ed
 This repository can be separated into the following contents:
 
 1. Folder `programs`: This includes an instrumentation tool (with filename `instru.py`), and some scripts to perform static analysis and generate the instrumented executable binaries (The details are in later sections).
-2. Zip file `clean_instru_tool.zip`: This also contains an instrumentation tool that is modified based on that in the `programs` folder. This tool is only used for pure software-DFI [1]. It supports x86 ISA and has separate and more detailed README file in its folder. This is cleaned for the researchers who only need an instrumentation tool.
+2. Zip file `clean_soft_instru_tool.zip`: This also contains an instrumentation tool that is modified based on that in the `programs` folder. This tool is only used for pure software-DFI [1]. It supports x86 ISA and has separate and more detailed README file in its folder. This is cleaned for the researchers who only need an instrumentation tool.
 3. Folder `freedom-u-sdk`: This contains the Linux system that is tested under the RISC-V processor. The Linux system has been modified to reserve some memory for DFI.
 4. Folder `SVF`: This is the static analysis tool used in the paper. Refer to the instructions inside the folder to build the tool.
 5. Other folders and files: These are based on the initial Freedom project. The support of *xcvu440-u500devkit* is added. 
@@ -162,13 +162,15 @@ Note that the static analysis tool SVF is not a perfect reaching definition anal
 $ python ${PROGPATH}/instru.py ripe_attack_generator -roccinstr -usrrds usr_rds_ripe
 ```
 
-**Note:** although there are already some `usr_rds_xxx` files provided, the numbers inside them are not updated. We’ll update them later if possible. If you want to update them, please refer to the `README` of `clean_instru_tool.zip`, where there are instructions of how to update.
+**Note:** There are already some `usr_rds_xxx` files provided. If you want to update them, please refer to the `README` of `clean_soft_instru_tool.zip`, where there are instructions of how to update.
 
-For more details, including how to modify the instrumentation rules, especially the software-DFI implementation, please check the `README` inside `clean_instru_tool.zip`. Note that `clean_instru_tool.zip` is only for software-DFI, but similar approaches can also be used in RVDFI.
+For more details, including how to modify the instrumentation rules, especially the software-DFI implementation, please check the `README` inside `clean_soft_instru_tool.zip`. Note that `clean_soft_instru_tool.zip` is only for software-DFI, but similar approaches can also be used in RVDFI.
 
 ### MISC:
 
 The reaching definition for RVDFI is saved in `dfi_rds_file` file.
+
+You can check the files in the work folder (which is set by `WORKPATH` in `build.sh`). The `.ll` file is the instrumented IR. The instrumented lines have no indentation.
 
 There are some flags, such as `dfi_t_mode`, `dfi_t_count`, etc. They can be obtained by RVDFI processor to indicate some global configurations. For example, `dfi_t_count` means at most how many functions the processor enters for an instrumented program. RVDFI processor can count the entered function number, and kill the program once the function number meets the setting. This is to ensure the program end at the same point when testing.
 
@@ -220,7 +222,7 @@ Following to [Section 4](#4.-how-to-build-and-modify-the-rvdfi-risc-v-hardware-d
 
 After run the instrumented program on RVDFI processor, the violations can be checked at the first 32-bit integer of the reserved memory (physical address `0x6000000`). This integer indicates how many violations the processor meets till now. This can be checked manually by writing a program with `mmap` function to read such memory, or instrument the debug function inside `dfi_inst.cc`.
 
-For more details about how to check software-DFI’s violation, please refer to the `README` of `clean_instru_tool.zip`.
+For more details about how to check software-DFI’s violation, please refer to the `README` of `clean_soft_instru_tool.zip`.
 
 ## References:
 
